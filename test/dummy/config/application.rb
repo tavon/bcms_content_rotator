@@ -1,16 +1,16 @@
 require File.expand_path('../boot', __FILE__)
 
-require "active_model/railtie"
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_view/railtie"
-require "action_mailer/railtie"
+require 'rails/all'
 
+# If you have a Gemfile, require the gems listed there, including any gems
+# you've limited to :test, :development, or :production.
 Bundler.require
 require "bcms_content_rotator"
 
 module Dummy
   class Application < Rails::Application
+  # BrowserCMS should serve static CMS assets (js, css, images) from the Gem
+config.serve_static_assets = true
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
